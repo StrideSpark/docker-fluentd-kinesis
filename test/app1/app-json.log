@@ -1,0 +1,9 @@
+{ "log": "{\"context\":\"something\"}", "stream": "stdout","time": "2015-03-07T20:04:17.604503223Z"}
+{ "log": "{\"context\":\"something\"}", "stream": "stdout","time": "2015-03-07T20:04:17.604503223Z"}{ "log": "{\"context\":\"something\"}", "stream": "stdout","time": "2015-03-07T20:04:17.604503223Z"}
+{"log":"Syncing orgid=2 integrationId=1 startTime=Wed Dec 14 2016 22:01:21 GMT+0000 (UTC) txnid=aae5997b-6c44-49cc-8dd3-04b9a1fae8ee
+","stream":"stdout","time":"2016-12-14T22:01:21.638159347Z"}
+{"log":"Syncing orgid=2 integrationId=1 startTime=Wed Dec 14 2016 22:01:21 GMT+0000 (UTC) txnid=aae5997b-6c44-49cc-8dd3-04b9a1fae8ee","stream":"stdout","time":"2016-12-14T22:01:21.638159347Z"}
+{"log":"Syncing orgid=2 integrationId=1 startTime=Wed Dec 14 2016 22:01:21 GMT+0000 (UTC) txnid=aae5997b-6c44-49cc-8dd3-04b9a1fae8ee","stream":"stdout","time":"2016-12-14T22:01:21.638159347Z"}
+{"log":"Syncing orgid=2 integrationId=1 startTime=Wed Dec 14 2016 22:01:21 GMT+0000 (UTC) txnid=aae5997b-6c44-49cc-8dd3-04b9a1fae8ee","stream":"stdout","time":"2016-12-14T22:01:21.638159347Z"}
+{"log":"Syncing orgid=2 integrationId=1 startTime=Wed Dec 14 2016 22:01:21 GMT+0000 (UTC) txnid=aae5997b-6c44-49cc-8dd3-04b9a1fae8ee","stream":"stdout","time":"2016-12-14T22:01:21.638159347Z"}
+{"log":"Syncing orgid=2 integrationId=1 startTime=Wed Dec 14 2016 22:01:21 GMT+0000 (UTC) txnid=aae5997b-6c44-49cc-8dd3-04b9a1fae8ee","stream":"stdout","time":"2016-12-14T22:01:21.638159347Z"}

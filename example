@@ -1,0 +1,1 @@
+docker run  -e KINESIS_STREAM_NAME=stridespark-app-logs -v /Users/scott/projects/docker-fluentd-kinesis/test:/var/lib/docker/containers -v /Users/scott/projects/docker-fluentd-kinesis/test2:/var/log/docker 027f0226bfca

@@ -1,15 +1,17 @@
-FROM kiyoto/fluentd:0.10.56-2.1.1
+FROM fluent/fluentd:v0.12-latest
+WORKDIR /home/fluent
+ENV PATH /home/fluent/.gem/ruby/2.3.0/bin:$PATH
 
-MAINTAINER tal@musk.al
+# cutomize following "gem install fluent-plugin-..." line as you wish
 
-RUN mkdir /etc/fluent
+USER root
+RUN apk --no-cache add sudo build-base ruby-dev && \
+    sudo -u fluent gem install fluent-plugin-kinesis fluent-plugin-kubernetes --no-rdoc --no-ri && \
+    rm -rf /home/fluent/.gem/ruby/2.3.0/cache/*.gem && sudo -u fluent gem sources -c && \
+    apk del sudo build-base ruby-dev
 
-ADD fluent.conf /etc/fluent/
+EXPOSE 24284
 
-RUN ["/usr/local/bin/gem", "install", "fluent-plugin-record-reformer", "--no-rdoc", "--no-ri"]
+ADD fluent.conf /fluentd/etc/
 
-RUN ["/usr/local/bin/gem", "install", "fluent-plugin-forest", "--no-rdoc", "--no-ri"]
-
-RUN ["/usr/local/bin/gem", "install", "fluent-plugin-kinesis", "--no-rdoc", "--no-ri"]
-
-ENTRYPOINT ["/usr/local/bin/fluentd", "-c", "/etc/fluent/fluent.conf","--use-v1-config"]
+CMD exec fluentd -c /fluentd/etc/$FLUENTD_CONF -p /fluentd/plugins $FLUENTD_OPT

@@ -1,0 +1,39 @@
+apiVersion: extensions/v1beta1
+kind: DaemonSet
+metadata:
+  name: sumokube
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: sumokube
+  template:
+    metadata:
+      name: sumokube
+      labels:
+        app: sumokube
+    spec:
+      serviceAccount: sumokube
+      containers:
+      - name: sumokube
+        image: scottbessler/sumologic-collector:latest
+        imagePullPolicy: Always
+        securityContext:
+          privileged: true
+        volumeMounts:
+        - name: varrundockersock
+          mountPath: /var/run/docker.sock
+          readOnly: true
+        env:
+        - name: DEBUG
+          value: "true"
+        - name: SUMO_ACCESS_ID
+          value: susbnAnMabFGSU
+        - name: SUMO_ACCESS_KEY
+          value: EVDdlmeTsasP2cWPMtxyxSpXwirjyTm9NFSunEydUxjdad0fhjlXBQCneA3BhZtp
+        - name: SUMO_COLLECTOR_NAME
+          value: kubernetes3
+      volumes:
+      - name: varrundockersock
+        hostPath:
+          path: /var/run/docker.sock
